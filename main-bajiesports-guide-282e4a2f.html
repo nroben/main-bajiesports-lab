@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>八戒体育 · 资料索引与场景手册</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f8f5f0;
+            color: #3b3a36;
+            line-height: 1.7;
+            padding: 0 1.2rem;
+        }
+
+        .page {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 2.2rem 0 3.5rem;
+        }
+
+        /* ---------- 导航 ---------- */
+        .top-nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8rem 0 1.2rem;
+            border-bottom: 1px solid #e2ddd6;
+            margin-bottom: 2.8rem;
+        }
+
+        .top-nav .brand {
+            font-size: 1.25rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #4c4a44;
+        }
+
+        .top-nav .brand span {
+            background: #d9d0c4;
+            padding: 0.1rem 0.6rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: #3e3b34;
+            margin-left: 0.6rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5d5a52;
+            font-size: 0.95rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #9a8e7d;
+        }
+
+        /* ---------- 正文 ---------- */
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 450;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.6rem;
+            color: #302e2a;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #6b675e;
+            margin-bottom: 1.8rem;
+            padding-left: 0.8rem;
+            border-left: 3px solid #c5b8a7;
+            font-style: normal;
+        }
+
+        .intro p {
+            margin-bottom: 1.3rem;
+            font-size: 1rem;
+        }
+
+        /* ---------- 引用/提示块 ---------- */
+        .note-box {
+            background: #ede9e1;
+            padding: 1.1rem 1.6rem;
+            margin: 1.8rem 0 2.2rem;
+            border-radius: 6px 20px 20px 6px;
+            border-left: 5px solid #b7aa96;
+            color: #3d3a33;
+            font-size: 0.95rem;
+        }
+
+        .note-box strong {
+            font-weight: 530;
+            color: #2f2c26;
+        }
+
+        /* ---------- 场景卡片 ---------- */
+        .scene-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.6rem;
+            margin: 2.4rem 0 2rem;
+        }
+
+        .scene-card {
+            background: #ffffffef;
+            border-radius: 12px;
+            padding: 1.4rem 1.2rem 1.6rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02), 0 4px 12px rgba(70,60,50,0.06);
+            transition: transform 0.1s ease;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-2px);
+            background: #fffcf8;
+        }
+
+        .scene-card h3 {
+            font-size: 1.15rem;
+            font-weight: 470;
+            margin-bottom: 0.6rem;
+            color: #3d3930;
+            border-bottom: 1px dashed #dad2c6;
+            padding-bottom: 0.4rem;
+        }
+
+        .scene-card p {
+            font-size: 0.92rem;
+            color: #555148;
+            margin-bottom: 0.3rem;
+        }
+
+        .scene-card .tag {
+            display: inline-block;
+            background: #e6dfd5;
+            padding: 0.1rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            color: #4f4a40;
+            letter-spacing: 0.3px;
+            margin-top: 0.4rem;
+        }
+
+        /* ---------- 常见说明 ---------- */
+        .faq-mini {
+            margin: 2.6rem 0 1.2rem;
+            padding: 1.4rem 0 0.8rem;
+            border-top: 1px solid #ddd6cd;
+        }
+
+        .faq-mini h2 {
+            font-size: 1.2rem;
+            font-weight: 460;
+            margin-bottom: 1.2rem;
+            color: #3b372f;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #4a453c;
+        }
+
+        .faq-item .a {
+            padding-left: 1.2rem;
+            color: #5d5950;
+            font-size: 0.95rem;
+        }
+
+        .ref-link {
+            display: inline-block;
+            background: #e2dbd0;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #3a362e;
+            text-decoration: none;
+            transition: background 0.15s;
+        }
+
+        .ref-link:hover {
+            background: #cfc5b6;
+        }
+
+        .footnote {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd6cd;
+            font-size: 0.85rem;
+            color: #7d776b;
+            text-align: center;
+        }
+
+        /* ---------- 响应式 ---------- */
+        @media (max-width: 768px) {
+            .scene-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .top-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+            }
+
+            h1 {
+                font-size: 1.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 0 1rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 导航 -->
+    <nav class="top-nav">
+        <div class="brand">资料整理·索引<span>场景版</span></div>
+        <div class="nav-links">
+            <a href="#intro">概览</a>
+            <a href="#scene">场景</a>
+            <a href="#faq">常见说明</a>
+            <a href="https://main-bajiesports.com" style="border-bottom:1px solid #b2a48f;">八戒体育</a>
+        </div>
+    </nav>
+
+    <!-- 核心介绍 -->
+    <section id="intro">
+        <h1>关于信息整理与场景索引</h1>
+        <div class="subhead">以资料汇编的视角，梳理常用功能与常见场景</div>
+        <div class="intro">
+            <p>在日常的资料整理工作中，我们经常需要把零散的功能入口、使用背景和常见疑问组织成便于查阅的结构。这份索引手册围绕 <a href="https://main-bajiesports.com" style="color:#4d483f; text-decoration:underline; text-underline-offset:3px;">八戒体育</a> 所涉及的几类典型场景，做了一次轻量梳理。内容不追求面面俱到，而是把最常被问到的部分用卡片和问答形式呈现，方便快速定位。</p>
+            <p>下面的三个场景模块分别对应不同使用习惯——有的适合快速浏览更新，有的偏向固定栏目查阅，还有的侧重信息回溯。每个模块都附带简单的使用标签，帮助判断适用情境。</p>
+        </div>
+    </section>
+
+    <!-- 引用/提示块 -->
+    <div class="note-box">
+        <strong>📋 使用提示</strong> 本页内容仅作为资料索引与场景说明，不构成任何形式的推荐或承诺。所有信息请以实际页面展示为准。
+    </div>
+
+    <!-- 三个场景模块 -->
+    <section id="scene">
+        <h2 style="font-weight:450; font-size:1.3rem; margin-bottom:0.8rem; color:#3b372f;">常用场景模块</h2>
+        <div class="scene-grid">
+            <div class="scene-card">
+                <h3>快速浏览</h3>
+                <p>适合日常打开后先扫一眼整体更新，不需要深度查找。信息流按时间倒序排列，重点内容有浅色标记。</p>
+                <p>此模式下可配合浏览记录做简单比对。</p>
+                <span class="tag">轻量 · 高频</span>
+            </div>
+            <div class="scene-card">
+                <h3>固定栏目查阅</h3>
+                <p>部分栏目长期保留固定入口，如赛事汇总、分类简报等。适合有明确查阅目标时使用，减少跳转次数。</p>
+                <p>栏目结构一般保持稳定，便于形成肌肉记忆。</p>
+                <span class="tag">结构化 · 稳定</span>
+            </div>
+            <div class="scene-card">
+                <h3>信息回溯</h3>
+                <p>当需要查找某段时间内的内容或历史记录时，可利用站内筛选或关键词定位。适合做资料整理、核对等场景。</p>
+                <p>建议结合浏览器书签或本地笔记辅助归档。</p>
+                <span class="tag">归档 · 检索</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <section class="faq-mini" id="faq">
+        <h2>常见说明摘要</h2>
+
+        <div class="faq-item">
+            <div class="q">· 页面加载后显示的内容和什么有关？</div>
+            <div class="a">通常与当前网络环境、资源版本以及缓存策略有关。建议定期清理浏览器缓存或尝试无痕模式查看最新内容。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">· 如何确认自己使用的是最新版本？</div>
+            <div class="a">可以通过 <a href="https://main-bajiesports.com" class="ref-link">八戒体育</a> 首页底部的版本标识或更新日志进行核对。不同模块的更新节奏可能不同。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">· 场景卡片中的标签含义是什么？</div>
+            <div class="a">标签仅表示该场景的典型使用频率或结构特点，并非固定分类，可以根据实际需要灵活切换使用方式。</div>
+        </div>
+
+        <div style="margin-top:1.6rem; padding:0.8rem 1rem; background:#ede9e1; border-radius:6px; font-size:0.92rem;">
+            <span style="font-weight:500;">💡 补充</span> 如果你对某个具体功能或流程有疑问，建议先在站内帮助页或常见问题区查找关键词；若仍未解决，可通过站内反馈渠道提交描述。
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <div class="footnote">
+        资料索引页面 · 内容仅供整理参考 &nbsp;|&nbsp; 访问主站 <a href="https://main-bajiesports.com" style="color:#6b6559; text-decoration:underline; text-underline-offset:3px;">八戒体育</a>
+    </div>
+</div>
+</body>
+</html>
